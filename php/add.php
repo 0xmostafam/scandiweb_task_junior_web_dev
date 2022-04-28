@@ -24,6 +24,7 @@
       </li>
     </ul>
   </nav>
+  <div id="whole-form-container">
   <form action="save.php" method="post" id="product-form">
     <div class="form-group">
       <label for="sku">SKU</label>
@@ -68,6 +69,7 @@
       </div>
     </div>
   </form>
+  </div>
 </body>
 
 </html>
