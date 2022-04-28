@@ -1,5 +1,5 @@
 const handleSelection = (value) => {
-  const form = document.getElementById("product-form");
+  const form = document.getElementById("product_form");
   const subform = document.getElementById("form-container");
   const children = subform.children;
   Array.from(children).forEach((element) => {
@@ -28,7 +28,7 @@ const isAlphabet = (str) => {
 
 const handleSubmitAdd = async (e) => {
   e.preventDefault();
-  const form = document.getElementById("product-form");
+  const form = document.getElementById("product_form");
   const formData = new FormData(form);
   const data = {};
   formData.forEach((value, key) => {
@@ -43,7 +43,7 @@ const handleSubmitAdd = async (e) => {
     alert("SKU can't be empty and must be alphanumeric");
     return;
   }
-  if (!isAlphabet(data.name) || data.name === "") {
+  if (!isAlphaNumeric(data.name) || data.name === "") {
     alert("name can't be empty and must be alphabet");
     return;
   }
@@ -91,5 +91,5 @@ const handleSubmitAdd = async (e) => {
   }
 };
 
-const form = document.getElementById("product-form");
+const form = document.getElementById("product_form");
 form.addEventListener("submit", handleSubmitAdd);

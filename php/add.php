@@ -18,14 +18,14 @@
       <li>
         <h1>Product List</h1>
       </li>
-      <li><button type="submit" form="product-form">save</button></li>
+      <li><button type="submit" form="product_form">Save</button></li>
       <li>
-        <a href="../"><button>cancel</button></a>
+        <a href="../"><button>Cancel</button></a>
       </li>
     </ul>
   </nav>
   <div id="whole-form-container">
-  <form action="save.php" method="post" id="product-form">
+  <form action="save.php" method="post" id="product_form">
     <div class="form-group">
       <label for="sku">SKU</label>
       <input class="input" type="text" name="sku" id="sku" required />

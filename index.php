@@ -35,9 +35,9 @@ foreach ($result as $row) {
         <h1>Product List</h1>
       </li>
       <li>
-        <a href="php/add.php"><button>add</button></a>
+        <a href="php/add.php"><button>ADD</button></a>
       </li>
-      <li><button type="submit" form="items-form">mass delete</button></li>
+      <li><button type="submit" form="items-form">MASS DELETE</button></li>
     </ul>
   </nav>
   <form action="php/delete.php/" id="items-form" method="post">
