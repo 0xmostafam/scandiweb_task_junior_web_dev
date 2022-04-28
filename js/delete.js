@@ -12,7 +12,7 @@ const handleSubmitDelete = async (e) => {
         return;
     }
 
-    const result = await fetch("delete.php", {
+    const result = await fetch("php/delete.php", {
         method: 'POST', 
         body: JSON.stringify(data),
         headers:{

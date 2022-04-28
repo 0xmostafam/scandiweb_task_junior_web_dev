@@ -87,7 +87,7 @@ const handleSubmitAdd = async (e) => {
   if (response === "Sku already exists"){
     alert(response);
   } else {
-    window.location.href = "index.php";
+    window.location.href = "../";
   }
 };
 

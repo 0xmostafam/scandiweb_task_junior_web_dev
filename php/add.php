@@ -20,7 +20,7 @@
       </li>
       <li><button type="submit" form="product-form">save</button></li>
       <li>
-        <a href="index.php"><button>cancel</button></a>
+        <a href="../"><button>cancel</button></a>
       </li>
     </ul>
   </nav>
