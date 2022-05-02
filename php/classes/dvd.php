@@ -1,31 +1,15 @@
 <?php
 
-require_once(__DIR__ . "/../interface/product.php");
+require_once(__DIR__ . "/../abstract/product.php");
 
 class DVD implements Product
 {
-
-    private $sku;
-    private $name;
-    private $price;
     private $size;
 
     public function __construct()
     {
     }
 
-    public function getSKU()
-    {
-        return $this->sku;
-    }
-    public function getName()
-    {
-        return $this->name;
-    }
-    public function getPrice()
-    {
-        return $this->price;
-    }
     public function getDescription()
     {
         return $this->size;
@@ -33,18 +17,6 @@ class DVD implements Product
     public function getDescriptionType()
     {
         return "Size";
-    }
-    public function setSKU($sku)
-    {
-        $this->sku = $sku;
-    }
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-    public function setPrice($price)
-    {
-        $this->price = $price;
     }
     public function setDescription($description)
     {
