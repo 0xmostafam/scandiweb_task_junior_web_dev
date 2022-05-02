@@ -1,15 +1,15 @@
 <?php
 
 require_once(__DIR__ . "/php/classes/crud.php");
-require_once(__DIR__ . "/php/classes/productSelector.php");
+require_once(__DIR__ . "/php/classes/productFactory.php");
 
 $crud = new CRUD();
-$productSelector = new ProductSelector();
 $result = $crud->readAll();
 $objects = [];
 
 foreach ($result as $row) {
-    array_push($objects, $productSelector->createObject($row));
+    $type = $row["type"]. "Factory";
+    array_push($objects, getObject(new $type(), $row));
 }
 
 ?>

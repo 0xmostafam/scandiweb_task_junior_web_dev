@@ -1,5 +1,4 @@
 const handleSelection = (value) => {
-  const form = document.getElementById("product_form");
   const subform = document.getElementById("form-container");
   const children = subform.children;
   Array.from(children).forEach((element) => {
@@ -51,15 +50,15 @@ const handleSubmitAdd = async (e) => {
     alert("Price can't be empty and must be numeric");
     return;
   }
-  if (data.type_switcher === "dvd-form" && (!isNumeric(data.size) || data.size === "")) {
+  if (data.type_switcher === "Dvd" && (!isNumeric(data.size) || data.size === "")) {
     alert("Size can't be empty and must be numeric");
     return;
   }
-  if (data.type_switcher === "book-form" && (!isNumeric(data.weight) || data.weight === "")) {
+  if (data.type_switcher === "Book" && (!isNumeric(data.weight) || data.weight === "")) {
     alert("Weight can't be empty and must be numeric");
     return;
   }
-  if (data.type_switcher === "furniture-form") {
+  if (data.type_switcher === "Furniture") {
     if (!isNumeric(data.height) || data.height === "") {
       alert("Height can't be empty and must be numeric");
       return;
@@ -73,6 +72,15 @@ const handleSubmitAdd = async (e) => {
       return;
     }
   }
+  if (data.type_switcher === "Dvd"){
+    data["description"] = data["size"]
+  }
+  if (data.type_switcher === "Book"){
+    data["description"] = data["weight"]
+  }
+  if (data.type_switcher === "Furniture"){
+    data["description"] = data["height"] + "X" + data["width"] + "X" + data["length"]
+  }
 
   const result = await fetch("save.php", {
     method: 'POST', 
@@ -83,7 +91,6 @@ const handleSubmitAdd = async (e) => {
     }})
 
   const response = await result.text();
-
   if (response === "Sku already exists"){
     alert(response);
   } else {

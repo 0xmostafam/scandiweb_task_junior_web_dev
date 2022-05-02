@@ -40,20 +40,20 @@
     </div>
     <select class="form-group" name="type_switcher" id="productType" onChange="handleSelection(value)">
       <option value="">Please choose an option</option>
-      <option value="dvd-form">DVD</option>
-      <option value="book-form">Book</option>
-      <option value="furniture-form">Furniture</option>
+      <option value="Dvd">DVD</option>
+      <option value="Book">Book</option>
+      <option value="Furniture">Furniture</option>
     </select>
     <div id="form-container">
-      <div class="form-group" style="display: none;" id="dvd-form">
+      <div class="form-group" style="display: none;" id="Dvd">
         <label for="size">Size(MB)</label>
         <input class="input" type="number" name="size" id="size" />
       </div>
-      <div class="form-group" style="display: none;" id="book-form">
+      <div class="form-group" style="display: none;" id="Book">
         <label for="weight">Weight(KG)</label>
         <input class="input" type="number" name="weight" id="weight" />
       </div>
-      <div id="furniture-form" style="display: none;">
+      <div id="Furniture" style="display: none;">
         <div class="form-group" id="height-div">
           <label for="height">Height(CM)</label>
           <input class="input" type="number" name="height" id="height" />

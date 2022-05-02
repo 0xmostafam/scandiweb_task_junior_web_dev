@@ -2,7 +2,7 @@
 
 require_once(__DIR__ . "/../abstract/product.php");
 
-class Furniture implements Product
+class Furniture extends Product
 {
 
     private $length;
@@ -40,14 +40,14 @@ class Furniture implements Product
 
     public function createDBEntry($crud)
     {
-        $firstInsert = ["sku" => $this->sku, "name" => $this->name, "price" => $this->price, "type" => "FURNITURE"];
-        $secondInsert = ["sku" => $this->sku, "description" => "" . $this->width . "X" . $this->height . "X" . $this->length . ""];
+        $firstInsert = ["sku" => $this->getSKU(), "name" => $this->getName(), "price" => $this->getName(), "type" => "Furniture"];
+        $secondInsert = ["sku" => $this->getSKU(), "description" => $this->getDescription()];
         $crud->create($firstInsert, $secondInsert);
     }
 
     public function readDbEntry($crud)
     {
-        $result = $crud->read("sku, name, price, description", "sku = " . $this->sku);
+        $result = $crud->read("sku, name, price, description", "sku = " . $this->getSKU());
         return $result;
     }
 }
