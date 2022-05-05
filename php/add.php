@@ -40,12 +40,12 @@
     </div>
     <select class="form-group" name="type_switcher" id="productType" onChange="handleSelection(value)">
       <option value="">Please choose an option</option>
-      <option value="Dvd">DVD</option>
+      <option value="DVD">DVD</option>
       <option value="Book">Book</option>
       <option value="Furniture">Furniture</option>
     </select>
     <div id="form-container">
-      <div class="form-group" style="display: none;" id="Dvd">
+      <div class="form-group" style="display: none;" id="DVD">
         <label for="size">Size(MB)</label>
         <input class="input" type="number" name="size" id="size" />
       </div>

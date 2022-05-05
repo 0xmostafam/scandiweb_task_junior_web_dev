@@ -4,9 +4,6 @@ require_once(__DIR__ . "/../abstract/product.php");
 
 class DVD extends Product
 {
-    private $sku;
-    private $name;
-    private $price;
     private $size;
 
     public function __construct()
@@ -28,7 +25,7 @@ class DVD extends Product
 
     public function createDBEntry($crud)
     {
-        $firstInsert = ["sku" => $this->getSKU(), "name" => $this->getName(), "price" => $this->getPrice(), "type" => "Dvd"];
+        $firstInsert = ["sku" => $this->getSKU(), "name" => $this->getName(), "price" => $this->getPrice(), "type" => "DVD"];
         $secondInsert = ["sku" => $this->getSKU(), "description" => $this->getDescription()];
         $crud->create($firstInsert, $secondInsert);
     }
