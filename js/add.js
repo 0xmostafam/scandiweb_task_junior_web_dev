@@ -50,11 +50,17 @@ const handleSubmitAdd = async (e) => {
     alert("Price can't be empty and must be numeric");
     return;
   }
-  if (data.type_switcher === "Dvd" && (!isNumeric(data.size) || data.size === "")) {
+  if (
+    data.type_switcher === "DVD" &&
+    (!isNumeric(data.size) || data.size === "")
+  ) {
     alert("Size can't be empty and must be numeric");
     return;
   }
-  if (data.type_switcher === "Book" && (!isNumeric(data.weight) || data.weight === "")) {
+  if (
+    data.type_switcher === "Book" &&
+    (!isNumeric(data.weight) || data.weight === "")
+  ) {
     alert("Weight can't be empty and must be numeric");
     return;
   }
@@ -72,26 +78,28 @@ const handleSubmitAdd = async (e) => {
       return;
     }
   }
-  if (data.type_switcher === "Dvd"){
-    data["description"] = data["size"]
+  if (data.type_switcher === "DVD") {
+    data["description"] = data["size"];
   }
-  if (data.type_switcher === "Book"){
-    data["description"] = data["weight"]
+  if (data.type_switcher === "Book") {
+    data["description"] = data["weight"];
   }
-  if (data.type_switcher === "Furniture"){
-    data["description"] = data["height"] + "X" + data["width"] + "X" + data["length"]
+  if (data.type_switcher === "Furniture") {
+    data["description"] =
+      data["height"] + "X" + data["width"] + "X" + data["length"];
   }
 
   const result = await fetch("save.php", {
-    method: 'POST', 
+    method: "POST",
     body: JSON.stringify(data),
-    headers:{
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
-    }})
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+  });
 
   const response = await result.text();
-  if (response === "Sku already exists"){
+  if (response === "Sku already exists") {
     alert(response);
   } else {
     window.location.href = "../";

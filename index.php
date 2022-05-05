@@ -1,16 +1,19 @@
 <?php
 
 require_once(__DIR__ . "/php/classes/crud.php");
+require_once(__DIR__ . "/php/classes/book.php");
+require_once(__DIR__ . "/php/classes/furniture.php");
+require_once(__DIR__ . "/php/classes/dvd.php");
 
 $crud = new CRUD();
 $result = $crud->readAll();
 $objects = [];
 
 foreach ($result as $row) {
-    $type = $row["type"];
-    $product = new $type();
-    $product->setAttributes($row);
-    array_push($objects, $product);
+  $type = $row["type"];
+  $product = new $type();
+  $product->setAttributes($row);
+  array_push($objects, $product);
 }
 
 ?>
@@ -44,15 +47,15 @@ foreach ($result as $row) {
   <form action="php/delete.php/" id="items-form" method="post">
     <div id="products">
       <?php foreach ($objects as $object) { ?>
-      <div class="product">
-        <?php
-        echo "<input type=\"checkbox\" class=\"delete-checkbox\" name=\"".$object->getSKU()."\" />";
-        echo "<p> SKU : ".$object->getSKU()."</p>";
-        echo "<p> Name : ".$object->getName()."</p>";
-        echo "<p> Price : ".$object->getPrice()." $</p>";
-        echo "<p>".$object->getDescriptionType()." : ".$object->getDescription()."</p>";
-        ?>
-      </div>
+        <div class="product">
+          <?php
+          echo "<input type=\"checkbox\" class=\"delete-checkbox\" name=\"" . $object->getSKU() . "\" />";
+          echo "<p> SKU : " . $object->getSKU() . "</p>";
+          echo "<p> Name : " . $object->getName() . "</p>";
+          echo "<p> Price : " . $object->getPrice() . " $</p>";
+          echo "<p>" . $object->getDescriptionType() . " : " . $object->getDescription() . "</p>";
+          ?>
+        </div>
       <?php } ?>
     </div>
   </form>
