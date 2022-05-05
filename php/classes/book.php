@@ -24,13 +24,6 @@ class Book extends Product
         $this->weight = $description;
     }
 
-    public function setAttributes($attributes)
-    {
-        $this->sku = $attributes['sku'];
-        $this->name = $attributes['name'];
-        $this->price = $attributes['price'];
-        $this->weight = $attributes['weight'];
-    }
     public function createDBEntry($crud)
     {
         $firstInsert = ["sku" => $this->getSKU(), "name" => $this->getName(), "price" => $this->getPrice(), "type" => "Book"];

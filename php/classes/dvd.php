@@ -26,13 +26,6 @@ class DVD extends Product
         $this->size = $description;
     }
 
-    public function setAttributes($attributes)
-    {
-        $this->sku = $attributes['sku'];
-        $this->name = $attributes['name'];
-        $this->price = $attributes['price'];
-        $this->size = $attributes['size'];
-    }
     public function createDBEntry($crud)
     {
         $firstInsert = ["sku" => $this->getSKU(), "name" => $this->getName(), "price" => $this->getPrice(), "type" => "Dvd"];

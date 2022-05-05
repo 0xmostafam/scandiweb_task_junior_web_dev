@@ -24,8 +24,14 @@ abstract class Product
     public function getPrice(){
         return $this->price;
     }
+    public function setAttributes($attributes)
+    {
+        $this->setSKU($attributes['sku']);
+        $this->setName($attributes['name']);
+        $this->setPrice($attributes['price']);
+        $this->setDescription($attributes['description']);
+    }
     abstract public function setDescription($description);
-    abstract public function setAttributes($attributes);
     abstract public function getDescription();
     abstract public function getDescriptionType();
     abstract public function createDBEntry($crud);

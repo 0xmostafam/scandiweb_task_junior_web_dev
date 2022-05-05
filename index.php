@@ -1,15 +1,16 @@
 <?php
 
 require_once(__DIR__ . "/php/classes/crud.php");
-require_once(__DIR__ . "/php/classes/productFactory.php");
 
 $crud = new CRUD();
 $result = $crud->readAll();
 $objects = [];
 
 foreach ($result as $row) {
-    $type = $row["type"]. "Factory";
-    array_push($objects, getObject(new $type(), $row));
+    $type = $row["type"];
+    $product = new $type();
+    $product->setAttributes($row);
+    array_push($objects, $product);
 }
 
 ?>

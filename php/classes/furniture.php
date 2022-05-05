@@ -28,15 +28,6 @@ class Furniture extends Product
         $this->height = $values[1];
         $this->length = $values[2];
     }
-    public function setAttributes($attributes)
-    {
-        $this->sku = $attributes['sku'];
-        $this->name = $attributes['name'];
-        $this->price = $attributes['price'];
-        $this->length = $attributes['length'];
-        $this->width = $attributes['width'];
-        $this->height = $attributes['height'];
-    }
 
     public function createDBEntry($crud)
     {
